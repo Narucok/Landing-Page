@@ -30,13 +30,13 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Selamat Datang di Playlandia</h1>
-            <p>Tempat hiburan keluarga terbaik dengan berbagai wahana seru, arena bermain anak, dan fasilitas lengkap untuk liburan yang tak terlupakan.</p>
-            <button class="cta-button" onclick="scrollToBooking()">Pesan Tiket Sekarang</button>
-        </div>
-    </section>
+   <section class="hero" id="home" style="background: url('assets/playlandia-hero.jpg') center/cover no-repeat;">
+    <div class="container hero-content">
+        <h1>Selamat Datang di Playlandia</h1>
+        <p>Tempat hiburan keluarga terbaik dengan berbagai wahana seru...</p>
+        <button class="cta-button" onclick="scrollToBooking()">Pesan Tiket Sekarang</button>
+    </div>
+</section>
 
     <!-- Fasilitas Section -->
     <section class="facilities" id="facilities">
@@ -245,7 +245,10 @@
             </div>
             <div class="location-container">
                 <div class="map-placeholder">
-                    [Peta Lokasi Playlandia]
+                    <iframe
+                      src="https://maps.app.goo.gl/XwgeUDgVzU8NdrLU9"
+                      width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
                 </div>
                 <div class="hours-info">
                     <h3>Jam Buka</h3>
