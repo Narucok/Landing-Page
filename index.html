@@ -1,199 +1,325 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Notredame Adventure Park Surabaya</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlandia - Pusat Hiburan Keluarga Terbaik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header & Navigasi -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Playlandia</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#facilities">Fasilitas</a></li>
+                    <li><a href="#promo">Promo</a></li>
+                    <li><a href="#booking">Pesan Tiket</a></li>
+                    <li><a href="#testimonials">Testimoni</a></li>
+                    <li><a href="#location">Lokasi</a></li>
+                </ul>
+                <button class="cta-button" onclick="scrollToBooking()">Pesan Sekarang</button>
+            </nav>
+        </div>
+    </header>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <nav>
-      <h3 class="logo">Notredame Adventure</h3>
-    </nav>
-    <div class="hero-content">
-        <h1>Rasakan Petualangan Seru di Tengah Kota Surabaya!</h1>
-        <p>Notredame Adventure Park adalah tempat yang menarik untuk keluarga dan komunitas.</p>
-        <a href="#form-section" class="cta-button">Pesan Tiket Sekarang</a>
-    </div>
-  </header>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Selamat Datang di Playlandia</h1>
+            <p>Tempat hiburan keluarga terbaik dengan berbagai wahana seru, arena bermain anak, dan fasilitas lengkap untuk liburan yang tak terlupakan.</p>
+            <button class="cta-button" onclick="scrollToBooking()">Pesan Tiket Sekarang</button>
+        </div>
+    </section>
 
-  <!-- Benefit Section -->
-  <section>
-    <div class="benefit-cards">
-      <div class="card">
-        <span>🏊‍♂️</span>
-        <h3>Kolam Renang</h3>
-        <p>Kolam anak & dewasa yang bersih dan aman, cocok untuk keluarga.</p>
-      </div>
+    <!-- Fasilitas Section -->
+    <section class="facilities" id="facilities">
+        <div class="container">
+            <div class="section-title">
+                <h2>Fasilitas Kami</h2>
+                <p>Nikmati berbagai wahana dan fasilitas terbaik yang kami sediakan untuk pengalaman bermain yang maksimal</p>
+            </div>
+            <div class="facility-grid">
+                <div class="facility-card">
+                    <div class="facility-img">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <div class="facility-content">
+                        <h3>Wahana Anak</h3>
+                        <p>Area khusus untuk anak-anak dengan wahana yang aman dan menyenangkan sesuai usia mereka.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-img">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="facility-content">
+                        <h3>Arcade Games</h3>
+                        <p>Koleksi game arcade terbaru dengan teknologi mutakhir untuk pengalaman bermain yang seru.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-img">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="facility-content">
+                        <h3>Food Court</h3>
+                        <p>Berbagai pilihan makanan dan minuman lezat untuk mengisi energi setelah bermain seharian.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="card">
-        <span>🌊</span>
-        <h3>Danau Buatan</h3>
-        <p>Suasana sejuk untuk jalan santai atau naik perahu air.</p>
-      </div>
+    <!-- Promo Section -->
+    <section class="promo" id="promo">
+        <div class="container">
+            <h2>Promo Spesial Akhir Tahun!</h2>
+            <p>Dapatkan diskon hingga 30% untuk paket keluarga. Berlaku hingga 31 Desember 2023. Jangan lewatkan kesempatan ini!</p>
+            <button class="promo-button" onclick="scrollToBooking()">Pesan Sekarang</button>
+        </div>
+    </section>
 
-      <div class="card">
-        <span>🏢</span>
-        <h3>Convention Hall</h3>
-        <p>Ballroom serbaguna untuk event, rapat, atau pernikahan indoor.</p>
-      </div>
+    <!-- Form Pemesanan Tiket -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pesan Tiket Playlandia</h2>
+                <p>Nikmati kemudahan memesan tiket secara online dan dapatkan harga terbaik</p>
+            </div>
+            <div class="booking-container">
+                <div class="booking-form">
+                    <h3>Form Pemesanan</h3>
+                    <form id="ticketForm">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Nomor Telepon</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="visitDate">Tanggal Kunjungan</label>
+                                <input type="date" id="visitDate" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="visitTime">Waktu Kunjungan</label>
+                                <select id="visitTime" class="form-control" required>
+                                    <option value="">Pilih Waktu</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Jenis Tiket</label>
+                            <div class="ticket-type">
+                                <label for="adult">Dewasa (Rp 50.000)</label>
+                                <div class="ticket-quantity">
+                                    <button type="button" class="quantity-btn" onclick="updateQuantity('adult', -1)">-</button>
+                                    <input type="number" id="adult" class="quantity-input" value="0" min="0" readonly>
+                                    <button type="button" class="quantity-btn" onclick="updateQuantity('adult', 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="ticket-type">
+                                <label for="child">Anak (Rp 35.000)</label>
+                                <div class="ticket-quantity">
+                                    <button type="button" class="quantity-btn" onclick="updateQuantity('child', -1)">-</button>
+                                    <input type="number" id="child" class="quantity-input" value="0" min="0" readonly>
+                                    <button type="button" class="quantity-btn" onclick="updateQuantity('child', 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="ticket-type">
+                                <label for="toddler">Balita (Rp 20.000)</label>
+                                <div class="ticket-quantity">
+                                    <button type="button" class="quantity-btn" onclick="updateQuantity('toddler', -1)">-</button>
+                                    <input type="number" id="toddler" class="quantity-input" value="0" min="0" readonly>
+                                    <button type="button" class="quantity-btn" onclick="updateQuantity('toddler', 1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Catatan Tambahan (Opsional)</label>
+                            <textarea id="notes" class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="cta-button" style="width: 100%; padding: 15px; font-size: 1.1rem;">Pesan Tiket</button>
+                    </form>
+                </div>
+                <div class="ticket-summary">
+                    <h3>Ringkasan Pemesanan</h3>
+                    <div class="summary-item">
+                        <span>Dewasa (x0)</span>
+                        <span>Rp 0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Anak (x0)</span>
+                        <span>Rp 0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Balita (x0)</span>
+                        <span>Rp 0</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span>Rp 0</span>
+                    </div>
+                    <div class="booking-info">
+                        <h4>Informasi Penting</h4>
+                        <ul>
+                            <li>Tiket hanya berlaku pada tanggal yang dipilih</li>
+                            <li>Pembatalan dapat dilakukan maksimal 24 jam sebelum kunjungan</li>
+                            <li>Anak di bawah 3 tahun gratis (dengan maksimal 1 anak per dewasa)</li>
+                            <li>Pembayaran dapat dilakukan di lokasi atau melalui transfer bank</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="card">
-        <span>🌳</span>
-        <h3>Taman Luas</h3>
-        <p>Area hijau terbuka dengan gazebo dan jalur refleksi kaki.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Testimoni Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Apa Kata Pengunjung</h2>
+                <p>Lihat pengalaman seru pengunjung yang telah merasakan keseruan bermain di Playlandia</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Tempat yang sangat menyenangkan untuk keluarga! Anak-anak betah bermain seharian dan fasilitasnya lengkap sekali."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">SD</div>
+                        <div class="author-info">
+                            <h4>Sari Dewi</h4>
+                            <p>Ibu dari 2 anak</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Wahana arcade-nya keren banget! Banyak game terbaru yang seru dan staffnya ramah-ramah. Pasti balik lagi!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">AR</div>
+                        <div class="author-info">
+                            <h4>Andi Rahman</h4>
+                            <p>Mahasiswa</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Tempatnya bersih, aman, dan nyaman untuk anak-anak. Harga tiketnya juga terjangkau dengan fasilitas yang diberikan."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">LS</div>
+                        <div class="author-info">
+                            <h4>Lia Santoso</h4>
+                            <p>Guru TK</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Testimoni Section -->
-  <section class="testimonials">
-    <h2>Kata Pengunjung</h2>
-    <div class="testimonial-box">
-      <p>"Area kolam renang nya tidak terlalu luas tapi cukup bersih. Kalau hari biasa rata-rata sepi. HTM juga tidak mahal."</p>
-      <strong>- Grace Tanudjaja, local guide</strong>
-    </div>
-    <div class="testimonial-box">
-      <p>"Ruangan dalam tidak terlalu besar tapi sangat bersih dan rapi, di salah satu sisinya terdapat jogging track, danau kecil, dan taman yang asri. Parkir Motor dan Mobil cukup lega"</p>
-      <strong>- Thoriq Amrullah, local guide</strong>
+    <!-- Lokasi & Jam Buka Section -->
+    <section class="location-hours" id="location">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lokasi & Jam Operasional</h2>
+                <p>Kunjungi kami di lokasi strategis dengan jam operasional yang fleksibel</p>
+            </div>
+            <div class="location-container">
+                <div class="map-placeholder">
+                    [Peta Lokasi Playlandia]
+                </div>
+                <div class="hours-info">
+                    <h3>Jam Buka</h3>
+                    <table class="hours-table">
+                        <tr>
+                            <td>Senin - Jumat</td>
+                            <td>10:00 - 22:00</td>
+                        </tr>
+                        <tr>
+                            <td>Sabtu - Minggu</td>
+                            <td>09:00 - 23:00</td>
+                        </tr>
+                        <tr>
+                            <td>Hari Libur Nasional</td>
+                            <td>09:00 - 23:00</td>
+                        </tr>
+                    </table>
+                    <div class="address-info">
+                        <h3>Alamat</h3>
+                        <p>Jl. Hiburan No. 123, Kel. Bahagia, Kec. Ceria<br>Kota Mainan, 12345</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </div>
-    <a href="https://www.google.com/maps/place/Notredame+Adventure+Park/" target="https://maps.app.goo.gl/DnKj8ZMkry6GdmDg9" class="cta-button">Lihat Ulasan Lainnya</a>
-  </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Playlandia</h3>
+                    <p>Tempat hiburan keluarga terbaik dengan berbagai wahana seru dan fasilitas lengkap.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Tautan Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#facilities">Fasilitas</a></li>
+                        <li><a href="#promo">Promo</a></li>
+                        <li><a href="#booking">Pesan Tiket</a></li>
+                        <li><a href="#testimonials">Testimoni</a></li>
+                        <li><a href="#location">Lokasi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> (021) 1234-5678</li>
+                        <li><i class="fas fa-envelope"></i> info@playlandia.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Hiburan No. 123, Kota Mainan</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Dapatkan info promo dan event terbaru dari Playlandia</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email Anda" class="newsletter-input">
+                        <button type="submit" class="cta-button newsletter-button">Berlangganan</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Playlandia. Semua Hak Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
 
-  <!-- Detail Produk / Fasilitas -->
-  <section class="features">
-    <h2>Aktivitas Seru untuk Semua Usia</h2>
-    <div class="feature">
-      <img src="http://www.wisatabukitmas.com/wbm-admin/assets/uploads/files/facilities_foto/d7447-notredame-adventure-park-3-.jpg" alt="Kolam Renang" />
-      <div>
-        <h3>Kolam Renang Keluarga</h3>
-        <p>Fasilitas kolam anak dan dewasa dengan air bersih, lifeguard siaga, dan gazebo di tepi kolam.</p>
-      </div>
-    </div>
-
-    <div class="feature reverse">
-      <img src="http://www.wisatabukitmas.com/wbm-admin/assets/uploads/files/facilities_foto/926c2-notredame-adventure-park-2-.jpg" alt="Danau Buatan" />
-      <div>
-        <h3>Danau Buatan</h3>
-        <p>Area danau sejuk untuk bersantai dan berfoto bersama keluarga.</p>
-      </div>
-    </div>
-
-    <div class="feature">
-      <img src="assets\screenshot-1757824480356.png" alt="Convention Hall" />
-      <div>
-        <h3>Convention Hall / Ballroom</h3>
-        <p>Gedung indoor ber-AC untuk seminar, pesta ulang tahun, gathering, dan pernikahan.</p>
-      </div>
-    </div>
-
-    <div class="feature reverse">
-      <img src="assets\screenshot-1757824225185.png" alt="Area Taman" />
-      <div>
-        <h3>Area Taman Luas</h3>
-        <p>Taman terbuka hijau dengan gazebo, spot piknik, area refleksi kaki, dan tempat bermain anak.</p>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- Promo / Offer -->
-  <section class="promo">
-    <h2>Promo Khusus September 🎉</h2>
-    <p>Diskon 30% untuk pemesanan online sebelum 25 September!</p>
-    <a href="#form-section" class="cta-button">Ambil Promonya</a>
-  </section>
-
-  <!-- Formulir / Tiket -->
-  <section class="form-section" id="form-section">
-    <h2>Pesan Tiket Sekarang</h2>
-    <form id="ticketForm">
-      <input type="text" id="name" placeholder="Nama Lengkap" required />
-      <input type="email" id ="email" placeholder="Email" required />
-      <input type="tel" id ="phone" placeholder="Nomor HP" required />
-      <!-- <select id="bookingDay" required>
-        <option value="">Pilih Hari Kunjungan</option>
-        <option>Senin</option>
-        <option>Selasa</option>
-        <option>Rabu</option>
-        <option>Kamis</option>
-        <option>Jumat</option>
-        <option>Sabtu</option>
-        <option>Minggu</option>
-      </select> -->
-      <input type="date" id="bookingDate" required />
-      <input type="number" id="peopleCount" placeholder="Jumlah Orang" min="1" required />
-      <button type="submit">Pesan Tiket</button>
-    </form>
-  </section>
-
-
-  <section class="table-section">
-  <h2>Data Pengunjung</h2>
-  <table id="visitorTable">
-    <thead>
-      <tr>
-        <th>Nama</th>
-        <th>Waktu Pemesanan</th>
-        <th>Hari Booking</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Data akan ditambahkan lewat JS -->
-    </tbody>
-  </table>
-</section>
-
-
-  <!-- Opening Hours -->
-  <section class="opening-hours">
-    <h2>Jam Operasional</h2>
-    <table class="hours-table">
-      <tbody>
-        <tr><td>Senin</td><td>10.00 – 18.00</td></tr>
-        <tr><td>Selasa</td><td>10.00 – 18.00</td></tr>
-        <tr><td>Rabu</td><td>10.00 – 18.00</td></tr>
-        <tr><td>Kamis</td><td>10.00 – 18.00</td></tr>
-        <tr><td>Jumat</td><td>10.00 – 18.00</td></tr>
-        <tr><td>Sabtu</td><td>06.00 – 18.00</td></tr>
-        <tr><td>Minggu</td><td>06.00 – 18.00</td></tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq">
-    <h2>Pertanyaan Umum</h2>
-    <div class="faq-item">
-      <h4>Di mana lokasi Notredame Adventure Park?</h4>
-      <p>Wisata Bukit Mas 2, Jl. Raya Lidah Wetan No.23, Lidah Wetan, Kec. Lakarsantri, Kota Surabaya, Jawa Timur, 60292.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Berapa harga tiket masuk?</h4>
-      <p>Rp 30.000 (anak-anak), Rp 40.000 (dewasa). Gratis untuk balita di bawah 3 tahun.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Apakah bisa untuk rombongan sekolah?</h4>
-      <p>Bisa! Kami menyediakan paket khusus edukasi untuk TK/SD hingga 100 peserta.</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>Kontak: admin@notredamepark.id | WA: 0812-3456-7890</p>
-    <div class="social">
-      <a href="tel:0317534000">(031) 7534000</a> |
-      <a href="#">Instagram</a> |
-      <a href="#">Facebook</a> |
-      <a href="#">TikTok</a>
-    </div>
-    <p>&copy; 2025 Notredame Adventure Park Surabaya</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
